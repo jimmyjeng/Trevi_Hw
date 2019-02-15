@@ -33,7 +33,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvg-8P-a1i">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bvg-8P-a1i">
                                                         <rect key="frame" x="69" y="0.0" width="100" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="ZGF-ey-fVL"/>
@@ -56,7 +56,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jv0-Ky-Pkm">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jv0-Ky-Pkm">
                                                         <rect key="frame" x="69" y="0.0" width="100" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="dqT-jc-cZV"/>
@@ -117,27 +117,54 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="randomCell" id="mg7-Ob-guC">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="randomCell" id="mg7-Ob-guC" customClass="RandomCollectionViewCell" customModule="Hw" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="127" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsm-Gr-eB5">
-                                                    <rect key="frame" x="53.5" y="55" width="20" height="20"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="ljp-Ki-060"/>
-                                                        <constraint firstAttribute="height" constant="20" id="nlE-Mv-Z3P"/>
-                                                    </constraints>
-                                                </view>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="random" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlG-fn-NlV">
+                                                    <rect key="frame" x="34" y="54.5" width="59" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Jsm-Gr-eB5" firstAttribute="centerY" secondItem="mg7-Ob-guC" secondAttribute="centerY" id="0d1-cu-GwV"/>
-                                            <constraint firstItem="Jsm-Gr-eB5" firstAttribute="centerX" secondItem="mg7-Ob-guC" secondAttribute="centerX" id="oc2-e3-CBe"/>
+                                            <constraint firstItem="wlG-fn-NlV" firstAttribute="centerY" secondItem="mg7-Ob-guC" secondAttribute="centerY" id="7L3-Ib-0sJ"/>
+                                            <constraint firstItem="wlG-fn-NlV" firstAttribute="centerX" secondItem="mg7-Ob-guC" secondAttribute="centerX" id="ixC-7g-9vh"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="randomLabel" destination="wlG-fn-NlV" id="CV9-TP-fbA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="buttonCell" id="afi-ng-MYR" customClass="ButtonCollectionViewCell" customModule="Hw" customModuleProvider="target">
+                                        <rect key="frame" x="248" y="0.0" width="127" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="127" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lx-uY-Cwa">
+                                                    <rect key="frame" x="5" y="5" width="117" height="120"/>
+                                                    <state key="normal" title="確定"/>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstItem="2lx-uY-Cwa" firstAttribute="top" secondItem="afi-ng-MYR" secondAttribute="top" constant="5" id="GqH-m2-4um"/>
+                                            <constraint firstItem="2lx-uY-Cwa" firstAttribute="leading" secondItem="afi-ng-MYR" secondAttribute="leading" constant="5" id="IXI-EC-gtI"/>
+                                            <constraint firstAttribute="trailing" secondItem="2lx-uY-Cwa" secondAttribute="trailing" constant="5" id="ST5-0v-Ly0"/>
+                                            <constraint firstItem="2lx-uY-Cwa" firstAttribute="centerY" secondItem="afi-ng-MYR" secondAttribute="centerY" id="VTo-aV-QRL"/>
+                                            <constraint firstAttribute="bottom" secondItem="2lx-uY-Cwa" secondAttribute="bottom" constant="5" id="eZr-al-OcY"/>
+                                            <constraint firstItem="2lx-uY-Cwa" firstAttribute="centerX" secondItem="afi-ng-MYR" secondAttribute="centerX" id="rcc-ca-h8z"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="okButton" destination="2lx-uY-Cwa" id="jWE-ta-CTD"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

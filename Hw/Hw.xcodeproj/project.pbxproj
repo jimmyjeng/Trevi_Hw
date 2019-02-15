@@ -15,6 +15,8 @@
 		CD4A0A7B22172A4600963155 /* HwUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A7A22172A4600963155 /* HwUITests.swift */; };
 		CD4A0A8922172AE600963155 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A8822172AE600963155 /* MainViewController.swift */; };
 		CD4A0A8B22172AF300963155 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A8A22172AF300963155 /* DetailViewController.swift */; };
+		CD4A0A8D2217512300963155 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A8C2217512300963155 /* RandomCollectionViewCell.swift */; };
+		CD4A0A8F2217513A00963155 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A8E2217513A00963155 /* ButtonCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		CD4A0A7C22172A4600963155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4A0A8822172AE600963155 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CD4A0A8A22172AF300963155 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CD4A0A8C2217512300963155 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD4A0A8E2217513A00963155 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				CD4A0A6622172A4600963155 /* Info.plist */,
 				CD4A0A8822172AE600963155 /* MainViewController.swift */,
 				CD4A0A8A22172AF300963155 /* DetailViewController.swift */,
+				CD4A0A8C2217512300963155 /* RandomCollectionViewCell.swift */,
+				CD4A0A8E2217513A00963155 /* ButtonCollectionViewCell.swift */,
 			);
 			path = Hw;
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD4A0A8922172AE600963155 /* MainViewController.swift in Sources */,
+				CD4A0A8D2217512300963155 /* RandomCollectionViewCell.swift in Sources */,
 				CD4A0A5B22172A4400963155 /* AppDelegate.swift in Sources */,
+				CD4A0A8F2217513A00963155 /* ButtonCollectionViewCell.swift in Sources */,
 				CD4A0A8B22172AF300963155 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
