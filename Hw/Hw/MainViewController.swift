@@ -20,7 +20,14 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onStartClick(_ sender: Any) {
+        guard let colCount = Int(colTextField.text!), colCount > 0 else {
+            return
+        }
+        guard let rowCount = Int(rowTextField.text!), rowCount > 0 else {
+            return
+        }
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVCID") as! DetailViewController
+        vc.setData(column: colCount, row: rowCount)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
