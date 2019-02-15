@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var colTextField: UITextField!
     @IBOutlet weak var rowTextField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,9 +20,25 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onStartClick(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVCID") as? DetailViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVCID") as! DetailViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func isValidInt(_ str:String) -> Bool {
+        let regEx = "[0-9]+"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return predicate.evaluate(with: str)
+    }
+}
 
+extension MainViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (textField == colTextField || textField == rowTextField) {
+            let text = (textField.text ?? "") as NSString
+            let newText = text.replacingCharacters(in: range, with: string)
+            return isValidInt(newText)
+        } else {
+            return true
+        }
+    }
 }
