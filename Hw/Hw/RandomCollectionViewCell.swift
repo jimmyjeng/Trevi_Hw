@@ -13,4 +13,5 @@ class RandomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
 }

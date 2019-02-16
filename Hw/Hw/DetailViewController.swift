@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         weak var weakSelf = self
-        checkTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (Timer) in
+        checkTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { (Timer) in
             weakSelf?.randomSelect()
         })
     }
@@ -74,26 +74,19 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
             cell.randomLabel.isHidden = (indexPath.row != selectedNum)
             
             let line = indexPath.row / colCount
+            cell.topConstraint.constant = (line == 0) ? 10 : 0
             cell.topView.backgroundColor = colorArray?[line]
             cell.bottomView.backgroundColor = colorArray?[line].darker()
-            
-            if (isSelectColumn(row: indexPath.row)) {
-                cell.backgroundColor = UIColor.blue
-            } else {
-                cell.backgroundColor = UIColor.clear
-            }
+            cell.backgroundColor = isSelectColumn(row: indexPath.row) ? UIColor.blue : UIColor.clear
+
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! ButtonCollectionViewCell
             cell.okButton.addTarget(self, action: #selector(clearRandom), for: .touchUpInside)
             
-            if (isSelectColumn(row: indexPath.row)) {
-                cell.backgroundColor = UIColor.blue
-                cell.okButton.backgroundColor = UIColor.blue
-            } else {
-                cell.backgroundColor = UIColor.black
-                cell.okButton.backgroundColor = UIColor.clear
-            }
+            cell.backgroundColor = isSelectColumn(row: indexPath.row) ? UIColor.blue : UIColor.black
+            cell.okButton.backgroundColor = isSelectColumn(row: indexPath.row) ? UIColor.blue : UIColor.clear
+
             return cell
         }
     }
