@@ -11,4 +11,5 @@ import UIKit
 class ButtonCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var okButton: UIButton!
+
 }

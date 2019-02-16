@@ -16,12 +16,14 @@ class DetailViewController: UIViewController {
     private var rowCount:Int = 0
     private var checkTimer:Timer?
     private var selectedNum = -1
+    private var colorArray:[UIColor]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         weak var weakSelf = self
-        checkTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { (Timer) in
+        checkTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (Timer) in
             weakSelf?.randomSelect()
         })
     }
@@ -33,6 +35,10 @@ class DetailViewController: UIViewController {
     func setData(column:Int, row:Int) {
         colCount = column
         rowCount = row
+        colorArray = [UIColor]()
+        for _ in 0..<rowCount {
+            colorArray?.append(UIColor.random)
+        }
     }
     
     func randomSelect() {
@@ -51,7 +57,12 @@ class DetailViewController: UIViewController {
         selectedNum = -1
         randomCollectionView.reloadData()
     }
+    
+    func isSelectColumn(row:Int) -> Bool {
+        return (selectedNum % colCount == row % colCount)
+    }
 }
+
 extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colCount * (rowCount + 1)
@@ -61,10 +72,28 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         if (indexPath.row < colCount * rowCount) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "randomCell", for: indexPath) as! RandomCollectionViewCell
             cell.randomLabel.isHidden = (indexPath.row != selectedNum)
+            
+            let line = indexPath.row / colCount
+            cell.topView.backgroundColor = colorArray?[line]
+            cell.bottomView.backgroundColor = colorArray?[line].darker()
+            
+            if (isSelectColumn(row: indexPath.row)) {
+                cell.backgroundColor = UIColor.blue
+            } else {
+                cell.backgroundColor = UIColor.clear
+            }
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! ButtonCollectionViewCell
             cell.okButton.addTarget(self, action: #selector(clearRandom), for: .touchUpInside)
+            
+            if (isSelectColumn(row: indexPath.row)) {
+                cell.backgroundColor = UIColor.blue
+                cell.okButton.backgroundColor = UIColor.blue
+            } else {
+                cell.backgroundColor = UIColor.black
+                cell.okButton.backgroundColor = UIColor.clear
+            }
             return cell
         }
     }

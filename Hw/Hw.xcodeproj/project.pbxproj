@@ -17,6 +17,7 @@
 		CD4A0A8B22172AF300963155 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A8A22172AF300963155 /* DetailViewController.swift */; };
 		CD4A0A8D2217512300963155 /* RandomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A8C2217512300963155 /* RandomCollectionViewCell.swift */; };
 		CD4A0A8F2217513A00963155 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A0A8E2217513A00963155 /* ButtonCollectionViewCell.swift */; };
+		CD5CDE42221867A6000FC3DE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5CDE41221867A6000FC3DE /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		CD4A0A8A22172AF300963155 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CD4A0A8C2217512300963155 /* RandomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD4A0A8E2217513A00963155 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD5CDE41221867A6000FC3DE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				CD4A0A8A22172AF300963155 /* DetailViewController.swift */,
 				CD4A0A8C2217512300963155 /* RandomCollectionViewCell.swift */,
 				CD4A0A8E2217513A00963155 /* ButtonCollectionViewCell.swift */,
+				CD5CDE41221867A6000FC3DE /* Extension.swift */,
 			);
 			path = Hw;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				CD4A0A8922172AE600963155 /* MainViewController.swift in Sources */,
 				CD4A0A8D2217512300963155 /* RandomCollectionViewCell.swift in Sources */,
 				CD4A0A5B22172A4400963155 /* AppDelegate.swift in Sources */,
+				CD5CDE42221867A6000FC3DE /* Extension.swift in Sources */,
 				CD4A0A8F2217513A00963155 /* ButtonCollectionViewCell.swift in Sources */,
 				CD4A0A8B22172AF300963155 /* DetailViewController.swift in Sources */,
 			);
